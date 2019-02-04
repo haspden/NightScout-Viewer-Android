@@ -43,18 +43,27 @@
 </head>
 
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
+  <script>
+function process()
+{
+var url= document.getElementById("url").value;
+location.href=url;
+return false;
+}
+</script>
+<form onSubmit="return process();">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Nightscout URL</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="url" name="url" placeholder="e.g. https://yoursite.herokuapp.com" value="https://">
+      </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+    <div class="row">
+      <input type="submit" value="GO">
+    </div>
+  </form>
 </body>
 
 </html>
