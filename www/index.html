@@ -79,13 +79,22 @@ input[type=submit]:hover {
 <p>A simple full screen application for displaying your nightscout data in full screen mode.</p>
 
 <div class="container">
-  <form method="post" action="yourTextURL">
+  
+  <script>
+function process()
+{
+var url= document.getElementById("url").value;
+location.href=url;
+return false;
+}
+</script>
+<form onSubmit="return process();">
     <div class="row">
       <div class="col-25">
         <label for="fname">Nightscout URL</label>
       </div>
       <div class="col-75">
-        <input type="url" id="changeText" name="sitename" placeholder="e.g. https://yoursite.herokuapp.com" value="https://">
+        <input type="url" id="url" name="url" placeholder="e.g. https://yoursite.herokuapp.com" value="https://">
       </div>
     </div>
     <div class="row">
@@ -93,14 +102,9 @@ input[type=submit]:hover {
     </div>
   </form>
   
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  
+  
 
-<script>
-    $("#changeText").on('change', function() {
-          var url = $('#changeText').val();
-          window.location = url;
-    });
-</script>
   
   
 </div>
